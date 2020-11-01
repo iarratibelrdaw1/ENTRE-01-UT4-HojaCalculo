@@ -5,45 +5,54 @@
  *  se anotan la fecha, los ingresos y los gastos correspondientes a un
  *  apunte  contable  de una empresa
  * 
- * @author - 
+ * @author - Irune Arratibel
  *  
  */
 public class Fila
 {
+    //Atributos
+    //Constantes
+    //Variables
     private String id;
     private Fecha fecha;
     private double ingresos;
     private double gastos;
-
+    private Fila fila2;
+    
+    //Metodos
     /**
-     * Constructor  
+     * Constructor1  
      */
-    public Fila(String id)    {
-         
-
+    public Fila(String id){
+      this.id = id;
+      fecha = new Fecha(1,1,2020);
+      ingresos = 0.0;
+      gastos = 0.0;
     }
 
     /**
-     * Constructor  
+     * Constructor2  
      */
-    public Fila(String id, Fecha fecha, double ingresos, double gastos)    {
-        
+    public Fila(String id, Fecha fecha, double ingresos, double gastos){
+     this.id = id;
+     this.fecha = fecha;
+     this.ingresos = ingresos;
+     this.gastos = gastos;
+    }
+    
+    //GETTERS
+    /**
+     * accesor para el id de la fila
+     */
+    public String getId(){
+        return this.id;
 
     }
     
     /**
-     * accesor para el id de la fila
-     */
-    public String getId() {
-        return this.id;
-
-    }
-
-
-    /**
      * accesor para la fecha
      */
-    public Fecha getFecha() {
+    public Fecha getFecha(){
         return this.fecha;
 
     }
@@ -78,7 +87,7 @@ public class Fila
      * 
      */
     public Fila duplicar() {
-       return null;
+       return fila2 = new Fila(getId(),fecha.obtenerCopia(),getBeneficio(),getGastos() );
 
     }
 
@@ -87,10 +96,12 @@ public class Fila
      * (leer enunciado)
      */
     public String toString() {
-      return null;
-
+        if(getBeneficio() >= 0){ 
+            System.out.printf("\n%8s  %15s  %15.2f€  %15.2f€ %15.2f€",id,fecha.toString(),ingresos,gastos,getBeneficio());
+        }
+        else{
+            System.out.printf("\n%8s  %15s  %15.2f€  %15.2f€ %15.2f€ **",id,fecha.toString(),ingresos,gastos,getBeneficio());
+        }
+        return "";
     }
-
-     
-
 }

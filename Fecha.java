@@ -2,14 +2,19 @@
 /**
  *  Modela una fecha
  *  
- *  @author - 
+ *  @author - Irune Arratibel
  */
 public class Fecha
 {
+    //Atributos
+    //Constantes
+    //Variables
     private int dia;
     private int mes;
     private int año;
+    private Fecha fecha2;
 
+    //Metodos
     /**
      * constructor  
      */
@@ -21,6 +26,7 @@ public class Fecha
 
     }   
 
+    //GETTERS
     /**
      * accesor para  el día   
      */
@@ -45,6 +51,7 @@ public class Fecha
         return año;
     }
 
+    //SETTERS
     /**
      * mutador para el dia
      */
@@ -74,18 +81,15 @@ public class Fecha
      * Devuelve una copia exacta al objeto actual
      */
     public Fecha obtenerCopia() {
-         return null;
+         return fecha2 = new Fecha(getDia(),getMes(),getAño());
 
     }
 
     /**
-     * 
+     * Devuelve la fecha
      */
     public String toString() {
         return this.dia + "/"  + this.mes+ "/" + this.año;
 
     }
-
-    
-
 }
